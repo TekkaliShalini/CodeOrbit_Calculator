@@ -1,0 +1,413 @@
+/* ================================
+   BASIC RESET
+================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================================
+   PAGE
+================================ */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px 20px;
+
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(108, 92, 231, 0.30),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(79, 140, 255, 0.25),
+            transparent 35%
+        ),
+        #0f1220;
+
+    color: #ffffff;
+}
+
+
+/* ================================
+   MAIN CONTAINER
+================================ */
+
+.calculator-container {
+    width: 100%;
+    max-width: 420px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ================================
+   CALCULATOR
+================================ */
+
+.calculator {
+    width: 100%;
+
+    padding: 24px;
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 28px;
+
+    background: rgba(25, 28, 45, 0.95);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+
+    backdrop-filter: blur(15px);
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 22px;
+}
+
+.brand {
+    margin-bottom: 3px;
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 3px;
+
+    color: #8f82ff;
+}
+
+.calculator-header h1 {
+    font-size: 1.35rem;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: #20b486;
+
+    box-shadow: 0 0 14px rgba(32, 180, 134, 0.7);
+}
+
+
+/* ================================
+   DISPLAY
+================================ */
+
+.display-container {
+    min-height: 130px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    padding: 22px;
+
+    margin-bottom: 18px;
+
+    border-radius: 18px;
+
+    background: #10131f;
+
+    border: 1px solid rgba(255, 255, 255, 0.07);
+
+    overflow: hidden;
+}
+
+.previous-value {
+    min-height: 25px;
+
+    width: 100%;
+
+    text-align: right;
+
+    font-size: 0.95rem;
+
+    color: #858ba3;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.current-value {
+    width: 100%;
+
+    text-align: right;
+
+    font-size: clamp(2rem, 8vw, 3.2rem);
+
+    font-weight: 700;
+
+    color: #ffffff;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* ================================
+   BUTTON GRID
+================================ */
+
+.buttons {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+
+/* ================================
+   ALL BUTTONS
+================================ */
+
+.button {
+    height: 68px;
+
+    border: none;
+    border-radius: 16px;
+
+    font-size: 1.25rem;
+    font-weight: 700;
+
+    color: #ffffff;
+
+    cursor: pointer;
+
+    background: #252a3d;
+
+    transition:
+        transform 0.15s ease,
+        background 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+
+/* Hover effect */
+
+.button:hover {
+    background: #30364d;
+
+    transform: translateY(-2px);
+}
+
+
+/* Click effect */
+
+.button:active {
+    transform: scale(0.95);
+}
+
+
+/* Keyboard focus */
+
+.button:focus-visible {
+    outline: 3px solid #8f82ff;
+    outline-offset: 2px;
+}
+
+
+/* ================================
+   NUMBER BUTTONS
+================================ */
+
+.number {
+    background: #202538;
+}
+
+.number:hover {
+    background: #2b3045;
+}
+
+
+/* ================================
+   FUNCTION BUTTONS
+================================ */
+
+.function {
+    color: #b9b2ff;
+
+    background: #282542;
+}
+
+.function:hover {
+    background: #332f53;
+}
+
+
+/* ================================
+   OPERATOR BUTTONS
+================================ */
+
+.operator {
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #6c5ce7,
+        #5145c6
+    );
+
+    box-shadow:
+        0 8px 20px rgba(108, 92, 231, 0.20);
+}
+
+.operator:hover {
+    background: linear-gradient(
+        135deg,
+        #7a6af0,
+        #5b4fd2
+    );
+}
+
+
+/* ================================
+   EQUALS BUTTON
+================================ */
+
+.equals {
+    color: #ffffff;
+
+    background: linear-gradient(
+        135deg,
+        #20b486,
+        #15966f
+    );
+
+    box-shadow:
+        0 8px 20px rgba(32, 180, 134, 0.20);
+}
+
+.equals:hover {
+    background: linear-gradient(
+        135deg,
+        #2ac99a,
+        #19a67c
+    );
+}
+
+
+/* ================================
+   ZERO BUTTON
+================================ */
+
+.zero {
+    grid-column: span 2;
+}
+
+
+/* ================================
+   PROJECT NOTE
+================================ */
+
+.project-note {
+    margin-top: 18px;
+
+    font-size: 0.78rem;
+
+    color: #7e849b;
+
+    text-align: center;
+}
+
+
+/* ================================
+   MOBILE RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 18px 12px;
+    }
+
+    .calculator {
+        padding: 18px;
+
+        border-radius: 22px;
+    }
+
+    .buttons {
+        gap: 9px;
+    }
+
+    .button {
+        height: 60px;
+
+        border-radius: 13px;
+
+        font-size: 1.1rem;
+    }
+
+    .display-container {
+        min-height: 115px;
+
+        padding: 18px;
+    }
+
+    .current-value {
+        font-size: 2.3rem;
+    }
+}
+
+
+/* ================================
+   VERY SMALL SCREENS
+================================ */
+
+@media (max-width: 350px) {
+
+    .calculator {
+        padding: 14px;
+    }
+
+    .buttons {
+        gap: 7px;
+    }
+
+    .button {
+        height: 54px;
+
+        border-radius: 11px;
+
+        font-size: 1rem;
+    }
+
+    .display-container {
+        padding: 15px;
+    }
+
+    .current-value {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nova Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="calculator-container">
+
+        <section class="calculator" aria-label="Calculator">
+
+            <!-- Calculator heading -->
+            <div class="calculator-header">
+                <div>
+                    <p class="brand">NOVA</p>
+                    <h1>Calculator</h1>
+                </div>
+
+                <div class="status-dot"></div>
+            </div>
+
+
+            <!-- Calculator display -->
+            <div class="display-container">
+
+                <div class="previous-value" id="previousValue"></div>
+
+                <div class="current-value" id="currentValue">
+                    0
+                </div>
+
+            </div>
+
+
+            <!-- Calculator buttons -->
+            <div class="buttons">
+
+                <!-- First row -->
+                <button type="button" class="button function" data-action="clear">
+                    AC
+                </button>
+
+                <button type="button" class="button function" data-action="backspace">
+                    ⌫
+                </button>
+
+                <button type="button" class="button function" data-action="percentage">
+                    %
+                </button>
+
+                <button type="button" class="button operator" data-operator="/">
+                    ÷
+                </button>
+
+
+                <!-- Second row -->
+                <button type="button" class="button number" data-number="7">
+                    7
+                </button>
+
+                <button type="button" class="button number" data-number="8">
+                    8
+                </button>
+
+                <button type="button" class="button number" data-number="9">
+                    9
+                </button>
+
+                <button type="button" class="button operator" data-operator="*">
+                    ×
+                </button>
+
+
+                <!-- Third row -->
+                <button type="button" class="button number" data-number="4">
+                    4
+                </button>
+
+                <button type="button" class="button number" data-number="5">
+                    5
+                </button>
+
+                <button type="button" class="button number" data-number="6">
+                    6
+                </button>
+
+                <button type="button" class="button operator" data-operator="-">
+                    −
+                </button>
+
+
+                <!-- Fourth row -->
+                <button type="button" class="button number" data-number="1">
+                    1
+                </button>
+
+                <button type="button" class="button number" data-number="2">
+                    2
+                </button>
+
+                <button type="button" class="button number" data-number="3">
+                    3
+                </button>
+
+                <button type="button" class="button operator" data-operator="+">
+                    +
+                </button>
+
+
+                <!-- Fifth row -->
+                <button type="button" class="button number zero" data-number="0">
+                    0
+                </button>
+
+                <button type="button" class="button number" data-action="decimal">
+                    .
+                </button>
+
+                <button type="button" class="button equals" data-action="calculate">
+                    =
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- Small project information -->
+        <p class="project-note">
+            Built with HTML, CSS & JavaScript
+        </p>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
